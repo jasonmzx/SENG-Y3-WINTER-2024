@@ -225,5 +225,48 @@ Embedded Systems are specialized computer systems designed to perform specific d
 
 ---
 
-TODO: Pages 10-18 SPM textbook (finish slides 19-40)
+## Stakeholders
 
+- People who have a stake / interest in thiss project
+- Early identification of stakeholders is important; Need Adequate communications with them!
+
+**Types of Stakeholders:**
+- Internal Project Team 
+   - *Under the direct control of managemenet & project leader*
+- External to Project Team, but in the Organization 
+   - *example, the project leader might need the assistance of the users to carry out systems testing. Here the commitment of the people involved has to be negotiated*
+- External to Project Team & Organization 
+   - *Customers, Users / End-Users, Contracted people who carry out work for the project, usually Contract based*
+
+- **Diverse Stakeholder Objectives**: Different stakeholders have varying objectives in a project.
+- **Project Leader's Role**: Project leaders must recognize and reconcile these diverse interests.
+- **Example**: End-users may prioritize ease of use, while managers focus on cost savings.
+- **Communication and Negotiation**: Project leaders need strong communication and negotiation skills.
+- **'Theory W'**: Boehm and Ross proposed 'Theory W,' emphasizing creating win-win situations for all parties involved in a project. *(W = WIN)*
+- **Overlooked Stakeholders**: Sometimes, important stakeholder groups may be overlooked, especially in unfamiliar business contexts.
+- **Communication Plan**: Recommended practice is to create a communication plan at the project's outset to coordinate stakeholder efforts and ensure their interests align for project success.
+
+---
+
+## Setting Objectives
+
+- Some Stakeholders actually own the project, and they be controlling the finances of the project n stuff !
+-  They also set the objectives of the project. The objectives should define what the project team must achieve for project success. 
+
+Informally the objectives could be written as a set of statements following the opening words *"The project will be a success if. . . ."*
+   - *"Customers can order our products online"* , which is quite loose, and less technical than *"Build E-Commerce Web-Application"*
+   - The more possible success scenarios, the higher probabilty of project success
+
+#### **Steering Committee** | AKA: Project Board or Project Management Board
+
+- A project authority needs to be explicitly identified with overall authority over the project.
+- Have overall responsibility for setting, monitoring and modifying objectives.
+- Project manager runs the project on a day-to-day basis, and regularly reports to Steering Committee
+
+## Sub-Objectives
+
+![SPM_4](./static/SPM_4.png)
+
+---
+
+TODO: Finish ch1
