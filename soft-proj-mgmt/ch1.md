@@ -83,7 +83,7 @@ Projects often fail – Standish Group claim only a third of ICT projects are su
 ---
 ## Activities Covered by Software Project Management
 *Software development activities recommended in the international standard ISO 12207*
-![cycle11](./static/SPM_1.png)
+<br>![cycle11](./static/SPM_1.png)
 
 **Feasibility Study**
 - Evaluates if a project is worth pursuing.
@@ -263,10 +263,85 @@ Informally the objectives could be written as a set of statements following the 
 - Have overall responsibility for setting, monitoring and modifying objectives.
 - Project manager runs the project on a day-to-day basis, and regularly reports to Steering Committee
 
-## Sub-Objectives
+### Sub-Objectives
 
-![SPM_4](./static/SPM_4.png)
+![SPM_4](./static/SPM_4.png) <br>
+Textbook Definition <br>
+![SPM_4](./static/SPM_5.png)
+
+### Measure of Effectiveness
+
+- Mean Time Between Failures (MTBF) - *Measure of Reliability*
+- Project Managers want an Idea of *Performance Measurements* (Reliability, Extendibility, etc...)
+- We seek *Predictive Measures* for these ^.
+- **example**, a large number of errors found during code inspections might indicate potential problems with reliability later.
 
 ---
 
-TODO: Finish ch1
+## The Business Case
+
+- Effort & Expenses of Project **VS** Benefit, needs to be Worthwhile !!!
+- Cost-Benefit analysis will often be part of the project's feasibility study.
+- Itemize and quantify the project’s costs and benefits *(Formulating Business Model)*
+
+**Example Business Model**: A new web-based application might allow customers from all over the world to order a firm’s products via the internet, increasing sales and thus increasing revenue and profits.
+<br>
+
+![SPM_4](./static/SPM_5.png)
+
+---
+
+## Project Success & Failure
+
+*PROJECT OBJECTIVES* != *BUSINESS OBJECTIVES* <br>
+
+**Project Objectives** <br>
+![SPM_4](./static/SPM_7.png)
+
+- Althought the Business Fails, we've still build awesome **Software Libraries** that can be re-used, an Asset
+- Improved skill and knowledge regardless of bussiness success (for devs)
+
+**Business Objective**
+- IN business terms it can generally be said that a project is a success if The assessment of the value of benefits exceeds the costs.
+- A project could meet these targets but the application, once delivered could fail to meet the business case.
+- Value of project deliverables is based on selling, gaining customer, gaining $$$, not the actual software.
+- A project can be a success on delivery but then be a business failure.
+- On the other hand, a project could be late and over budget, but its deliverables could still, over time, generate benefits that outweigh the initial expenditure
+
+**Technical Learning** increases cost at the beginning, but later it's better.
+- Example: Jason learns Full-Stack dev in early stages, now 2 years later, he's a pro at it, and can re-use code and write stuff quick
+- Astute managers may assess which areas of technical expertise it would be beneficial to develop
+
+---
+
+## What is Management?
+
+![SPM_4](./static/SPM_8.png)
+
+### **Most time spend by Manager on these 3**
+- Planning, Monitoring & Controlling
+- Prog. mgmt is carried out over three Well-Defined stages
+   - **1**: Plan is made *(Initial Plan)*
+   - **2**: Project is monitored & controlled, to proceed as Planned
+      - Revisions to Init. Plan are done if need be. *(Revised Periodically)*
+   - **3**: Project is Closed 
+
+- Initial Project Planning is done AFTER Feasibility Study
+
+<br>
+
+![SPM_4](./static/SPM_9.png)
+
+## Management Control
+
+![SPM_4](./static/SPM_10.png)
+
+* **Data - Raw Details**: 25K Documents processed at Location X
+***Information**: Processed Data, to produce as useful metric; Productivity is 1K Documents a Day!
+* **Comparison with Objectives & Goals**: We won't meet our Goal of having all documents processed by January 12th, as We're still 3K Documents away and that date is tomorrow.
+* **Modelling**: If we employ 3X the STAFF at the location, we can do it in a day!
+* **Implementation**: In the management sense, to carry out the decision, do the above ^^^
+
+---
+
+![SPM_4](./static/SPM_11.png)
