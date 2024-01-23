@@ -115,6 +115,8 @@ A **protocol** in contrast, is a set of rules governing the format and meaning o
 - **Operation**: The network layer adds source and destination IP addresses to the data packet's header. Routers operate at this layer, making decisions based on the packet's network-layer header to send it towards its destination.
 - Provides network-wide addressing and a mechanism to move packets between networks *(routing)*
 - **Real-World Example**: Think of the network layer as a postal service, which handles the addressing and routing of letters (data packets) to ensure they are delivered to the correct address, even if it involves multiple postal services (networks).
+  - Find's Best Path for Networking Packets
+  - Check's whats inside a Packet, and correctly routes it
 
 ![cn0](./static/CN_3.png)
 
@@ -123,10 +125,14 @@ A **protocol** in contrast, is a set of rules governing the format and meaning o
 - **Key Protocols**:
   - **TCP (Transmission Control Protocol)**: Provides reliable, ordered, and error-checked delivery of a stream of data between applications. It ensures that data is received as sent, resending lost packets and assembling received packets in the correct order.
   - **UDP (User Datagram Protocol)**: Offers a simpler, connection-less communication model with minimal protocol mechanism. It is used for time-sensitive transmissions where speed is preferred over reliability.
-- **Operation**: The transport layer takes data from the application layer, breaks it into smaller units (segments for TCP, datagrams for UDP), ensures these units are properly sequenced and error-free, and then passes them to the network layer.
+- **Operation**: The transport layer takes data from the application layer, breaks it into smaller units *(segments for TCP, datagrams for UDP)*, ensures these units are properly sequenced and error-free, and then passes them to the network layer.
 - **Real-World Example**: Consider TCP as a guaranteed delivery service, ensuring that all packages (data segments) are delivered in order and without loss. UDP, on the other hand, is like standard mail, faster but without guarantees of delivery or order.
 
 ![cn0](./static/CN_4.png)
+
+<br>
+
+**Agree on a Protocol** : For Error Control, like TCP, UDP or even Packet Check-Summing
 
 ### Session Layer
 - **Functionality**: Manages and controls the connections between computers. It is responsible for establishing, managing, and terminating connections between applications.
@@ -138,6 +144,7 @@ A **protocol** in contrast, is a set of rules governing the format and meaning o
 
 ### Presentation Layer
 - **Functionality**: Ensures that the data is in a usable format and is where data encryption and decryption occurs.
+  - Could be Big or Little Endian data transformed, etc...
 - **Key Aspects**:
   - **Data Translation**: Transforms data from the application layer into an intermediate format. It also manages data compression and encryption.
   - **Character Encoding**: Converts data from one encoding to another, e.g., from ASCII to EBCDIC.
@@ -154,4 +161,30 @@ A **protocol** in contrast, is a set of rules governing the format and meaning o
 - **Operation**: The application layer provides protocols that allow software to send and receive information and present meaningful data to users. It does not transport data, but instead, it uses the transport layer to send and receive data.
 - **Real-World Example**: Consider the application layer as a variety of office applications. Each application (like a web browser, email client, or file transfer software) uses the network to perform specific tasks that benefit the user.
 
-TODO slide 23-39 ch2
+---
+
+- **Switches** work at 2nd Layer, (Data Link) 
+- **Network Devices** Only implement first 2 layers (Physical & Data Link)
+- **Routers** Implement first 3 layers *(Phy, Data, Network)*
+
+---
+
+# TCP/IP Reference Model
+
+* Four Layer Model, uses the **IP** as the network layer
+* IP **Internet Protocol**
+* ICMP **Internet Control Message Protocol**
+
+## TCP
+
+Three-Way Handshake
+
+
+## UDP
+
+Data includes Sender & Receiver IP *(Info)*
+
+---
+
+
+
