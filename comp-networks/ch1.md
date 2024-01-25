@@ -29,3 +29,10 @@ Business Applications are usually server-based
 - ISP's like Rogers, Bell, Texavi
 
 ![CH_0](../static/CH_0.png)
+
+---
+
+# Good Diagram for inter-connectedness
+
+![CH_0](../static/CH_5.png)
+

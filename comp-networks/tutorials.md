@@ -103,6 +103,6 @@ Retransmission of last packet by intermediate routers *In packet switching* is `
 
 Minimizing this quantity (T) with respect to p, we find the packet size equation, and then differentiate...
 
-P is packet Size:
+P is packet Size: *Differentiated* to find local minimum, maximizing Ideal Packet Size 
 
 `p = sqrt(hx/(k-1))`
