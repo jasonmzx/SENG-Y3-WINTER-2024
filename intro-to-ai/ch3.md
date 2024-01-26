@@ -101,3 +101,37 @@ Compared with the real world, this **toy problem** has discrete locations, discr
 
 ![8queen](./static/AI_12.png)
 
+**Difficulty of Problem:**
+- *Sliding Block Puzzles* are a Family of problems which are known to be NP-Complete *(Therefore NP-Hard)*
+- 8 Puzzle has `9!/2 = ~182 K` States, which is still reasonable **(3x3 Board)**
+- 15 Puzzle has `16!/2 = 1.3 Trillion` States, which is not do-able... **(4x4 Board)**
+- 5x5 board takes 10+ hours to solve... not feasible
+- Clearly we see this isn't solvable in polynomial time, and therefore is **NP**
+
+### Another Example, 8-Queens Problem
+
+![8queen](./static/AI_12.png)
+
+---
+
+**Depth First Search** : LIFO
+- Explore all Branches, At 1 State, it tries to go all the way down a branch
+- O(b^m) , terrible if *m* >> *d* (much larger)
+- Not Optimal
+
+**Breath First Search**: FIFO
+- Explore All Layers of tree, before proceeding deeper
+
+*Completeness:* If there is a Solution, this Algorithm will find it
+
+*Optimal:* Finds Optimal Solution
+
+Fringe, Open List, Frontier List
+
+---
+
+Time complex:
+
+**b** N. Branches 
+**d** Depth of Optimal Solution
+**n** , **m** Maximal Depth of Solution
