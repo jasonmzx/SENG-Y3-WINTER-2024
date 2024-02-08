@@ -41,7 +41,8 @@ In summary, uniformed search algorithms are generally simpler and more general-p
 
 In general, *An agent with several immediate options of unknown value can decide what to do by first examining future actions that eventually lead to states of known value*
 
-<br>
+<details>
+<summary style="font-size: 30px; font-weight: 500; cursor: pointer;"> Romania Problem CH.3 </summary>
 
 ![romania](./static/AI_7.png)
 
@@ -62,13 +63,17 @@ The process of looking for a *sequence of actions* that reaches the goal is call
 #### Thus, we have a simple *“formulate, search, execute”* design for the agent (Fig below) 
 ![romania](./static/AI_6.png)
 
----
+</details>
+
 
 ## Formulating Problems *(Practically)*
 
 1. **Necessity of Relevant Abstraction**: For effective problem-solving, it's crucial to abstract away irrelevant details while retaining essential elements relevant to the task. This allows for focusing on key aspects without getting overwhelmed by unnecessary information.
 
 2. **Practicality and Validity of Abstraction**: The chosen abstraction must be valid, meaning it should accurately represent the necessary steps to achieve a goal, and practical, meaning the abstracted actions should be simple enough to execute without needing additional complex planning.
+
+<details>
+<summary style="font-size: 30px; font-weight: 500; cursor: pointer;"> Example Problem Formulations </summary>
 
 ### Example Problem Formulations
 
@@ -112,26 +117,82 @@ Compared with the real world, this **toy problem** has discrete locations, discr
 
 ![8queen](./static/AI_12.png)
 
+</details>
+
+<br>
+<br>
+<br>
+
+
+# Un-Informed Algorithms
+
+*Fringe, Open List, Frontier List* : Jargon words for just *"The Queue or Stack used in Algorithm"*
+
+## Depth First Search : LIFO (Stack)
+- Tries to expand a `node` (on top of the frontier list) to it's *Deepest path*, The search proceeds immediately to the deepest level of the search tree, till the nodes have no successors.
+
+- TIME COMPLEXITY: `O(b^m)` , terrible if *m* >> *d* *(m much larger than d)* where **m** is max depth, **d** is optimal sol. depth
+
+-  DFS Search needs to store only a single path **from the root to a leaf node**, along with the remaining unexpanded sibling nodes for each node on the path. 
+
+- After path is fully expanded, this current path can be **Deleted** from memory, and the next starts silling up the Stack. It's **SO GOOD** on Space complexity, unlike BFS
+
+![8queen](./static/AI_19.png)
+
 ---
 
-**Depth First Search** : LIFO
-- Explore all Branches, At 1 State, it tries to go all the way down a branch
-- O(b^m) , terrible if *m* >> *d* (much larger)
-- Not Optimal
+## Uniform-Cost Search
+- Expands the node `n` with the lowest path cost `g(n)`.
+    - Done via Priority Queue structure, ordered by `g` in decreasing order.
+- Goal test is applied to a node when it is selected for expansion. *(As the node may be on the sub-optimal path!)*
+    - A test is added in case a better path is found then a node currently on the frontier. *(Goes back, and checks lower costs paths, before moving on down a path)*
+- Uniform-cost search does not care about the number of steps a path has, but only about their total cost.
 
-**Breath First Search**: FIFO
-- Explore All Layers of tree, before proceeding deeper
 
-*Completeness:* If there is a Solution, this Algorithm will find it
+<br>
 
-*Optimal:* Finds Optimal Solution
+![Space & Time Complexities](./static/AI_18.png)
+- After Step 2: the Algorithm backtracks, and tests Fagaras path, as the sub-path at *2* is currently lower!
 
-Fringe, Open List, Frontier List
+
+<br>
+
+*Optimality*: Optimal, with any step-cost function, as it finds the "cheapest" path.
+
+![Space & Time Complexities](./static/AI_17.png)
 
 ---
 
-Time complex:
+## Breath First Search: FIFO (Queue)
+- Root node expanded to it's *successors*, then every successor is expanded, before it goes deeper.
 
-**b** N. Branches 
-**d** Depth of Optimal Solution
-**n** , **m** Maximal Depth of Solution
+*Completeness:* If there is a Solution, this Algorithm will find it... *(Finds shallowest goal)*
+- Complete with **b**, N. branches is finite
+- Let's say the shallowest goal is at depth **Z**, this algorithm will find the shallowest goal
+    - As shallower nodes didn't pass the **Goal Test**
+
+*Optimality:*  The *shallowest* goal node is not necessarily the *optimal* one...
+- Technically, breadth-first search is optimal if the path cost is a nondecreasing function of the depth of the node.
+
+
+**Complexity**: <br>
+![Space & Time Complexities](./static/AI_16.png)
+
+---
+
+## Iterative Deepening DFS
+- At every level, it does a DFS Search and then increases by 1 depth
+- Plus side: Space complexity is Linear *(Like DFS)*
+- EXERT: *In general, iterative deepening is the preferred uninformed search method when the search space is large and the depth of the solution is not known.*
+- It iteratively deepens the depth at which it searches, ensuring that it finds the shallowest (or least-cost) goal node first, similar to BFS.
+
+
+![IDS](./static/AI_20.png)
+
+**Application**: For many real-world problems, especially in AI and puzzle solving, the solution depth is unknown, and the search space can be vast. IDDFS's ability to provide depth-limited searches without the memory overhead of BFS makes it particularly useful. It's a more practical choice for applications running on hardware with limited memory resources.
+
+## LEGEND:
+
+- **b** : N. Branches 
+- **d** : Depth of Optimal Solution
+- **n** OR **m** *(used interchangbly)*: Maximal Depth of Solution
