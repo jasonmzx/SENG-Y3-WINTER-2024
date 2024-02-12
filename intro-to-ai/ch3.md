@@ -191,8 +191,14 @@ Compared with the real world, this **toy problem** has discrete locations, discr
 
 **Application**: For many real-world problems, especially in AI and puzzle solving, the solution depth is unknown, and the search space can be vast. IDDFS's ability to provide depth-limited searches without the memory overhead of BFS makes it particularly useful. It's a more practical choice for applications running on hardware with limited memory resources.
 
+---
+
 ## LEGEND:
 
 - **b** : N. Branches 
 - **d** : Depth of Optimal Solution
 - **n** OR **m** *(used interchangbly)*: Maximal Depth of Solution
+
+---
+
+![IDS](./static/AI_21.png)
