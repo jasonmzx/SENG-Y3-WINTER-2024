@@ -10,6 +10,7 @@
 int sum=10, count=0;
 
 void *runner_add(void *param){   
+    printf("COUNTER START: %d\n", count);
  count++;
     
     for(int j=0; j<3; j++){
@@ -20,6 +21,7 @@ void *runner_add(void *param){
 }
 
 void *runner_sub(void *param){
+    printf("COUNTER START: %d\n", count);
  count++;
     for(int k=0; k<3; k++){
         sum -= atoi(param);
