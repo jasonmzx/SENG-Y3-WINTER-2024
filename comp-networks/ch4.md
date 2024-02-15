@@ -1,6 +1,6 @@
 # Data-Link Layer
 
-*Important for today's quiz:*
+*Important for today's quiz: (Feb 1st)*
 
 dtrans: transmission delay:
 ▪ L: packet length (bits)
@@ -167,4 +167,109 @@ In summary, bit stuffing in protocols like USB 2.0 is crucial for maintaining cl
 
 ---
 
-TODO: Slides 17+ (70 slides left bruh)
+### Flow Control
+* Prevents a fast sender from out-pacing a slow receiver
+* Receiver gives feedback on the data it can accept *(Recevier can regulate flow of incoming data, and avoid overflows of it's own buffers)*
+* Rare in the Link layer as NICs run at “wire speed”
+
+### Error Control Techniques
+
+1. **Error Detection**: At the receiver, errors are detected in received frames. 
+   - **Example**: Receiver uses CRC *(Cyclic Redundancy Check)* to detect errors in a frame.
+
+2. **Acknowledgement (ACK)**: For every correctly received packet, the receiver sends an ACK back to the sender.
+   - **Example**: Receiver gets packet #5 without errors, sends an ACK #5 back to the sender.
+
+3. **Retransmission**: If a packet is received in error or an ACK is not received, the sender retransmits the packet.
+   - **Example**: Sender doesn't receive ACK for packet #3 within a timeframe, retransmits packet #3.
+
+4. **Piggybacking**: The receiver can include the ACK in a data frame being sent back to the sender.
+   - **Example**: Receiver needs to send data to the sender and includes ACK #4 for the last correctly received packet.
+
+5. **Timer and Timeout**: To protect against lost acknowledgements, a timer is set for each sent packet. A timeout occurs if an ACK is not received within the timeframe, triggering retransmission.
+   - **Example**: Sender sets a timer for packet #2, timeout occurs, triggers retransmission of packet #2.
+
+6. **Sequence Numbers**: To prevent duplicate frame reception, sequence numbers are assigned to frames.
+   - **Example**: Sender assigns sequence #1 to the first frame, ensuring the receiver can distinguish retransmissions from new 
+   frames.
+
+
+Error detection not 100% reliable! Protocol may miss some errors, but rarely...
+![CH_0](./static/CN_15.png)
+
+---
+
+### Even/Odd Parity
+
+> Odd Parity: Summation of number of 1's needs to be Odd
+
+- 1001001 -> 3x 1, (0) OK no error! : **10010010**
+- 1101001 -> 4x 1, (1) Erroneous : **11010011**
+
+> Even Parity: Summation of number of 1's needs to be Even
+
+- 1001001 -> 3x 1, (1) Erroneous : **10010011**
+- 1101001 -> 4x 1, (0) OK no error! **11010010**
+
+![CH_0](./static/CN_16.png)
+
+----
+
+### Checksums
+
+* Error detection capability is not as strong as CRC
+
+Suppose that a message 1001 1100 1010 0011 is transmitted using
+Internet Checksum (4-bit word). What is the value of the checksum?
+
+![CH_0](./static/CN_19.png)
+
+<br>
+
+![CH_0](./static/CN_20.png)
+
+
+---
+
+
+#### Example:
+
+### Sender Side: 
+* Data word to be sent - 100100
+* Key - 1101 *[Or generator polynomial x3 + x2 + 1]*
+
+![CH_0](./static/CN_17.png)
+
+* Therefore, the remainder is 001 and hence the encoded data sent is **100100 001**.
+
+### Receiver Side: 
+* Code word received at the receiver side  **100100001**
+
+![CH_0](./static/CN_18.png)
+
+* Therefore, the remainder is all zeros. Hence, the data received has no error.
+
+---
+
+# Data-Link layer protocols
+
+### Definitions:
+
+- **Propagation delay** is defined as the delay between transmission and receipt of packets between hosts.
+
+- **Timeout** should be at least twice the propagation delay plus
+processing time at the receiver and transmission of an ACK
+
+- **EWMA** Exponentially weighted moving average of the RTT *(round trip time)*
+
+- Let Timeout = 2*EWMA
+
+---
+
+### Noise-Free Stop and Wait:
+
+x
+
+### Stop and Wait - ARQ:
+
+![CH_0](./static/CN_21.png)

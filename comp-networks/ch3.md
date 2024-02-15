@@ -23,7 +23,7 @@ Twisted-Pair (Cat 5,6,7) Reduce Noise in Data
 
 # 4B/5B
 
-Certainly! The 4B/5B encoding scheme is used to ensure reliable data transmission, particularly in environments where signal integrity might be a concern. Here's an overview and an example to help clarify:
+The 4B/5B encoding scheme is used to ensure reliable data transmission, particularly in environments where signal integrity might be a concern. Here's an overview and an example to help clarify:
 
 ### 4B/5B Encoding Scheme
 
