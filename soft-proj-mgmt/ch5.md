@@ -138,6 +138,21 @@ create a system that will perform as required.
 
 </details>
 
+<details>
+<summary style="font-size: 30px; font-weight: 500; cursor: pointer;"> 
+Estimating by Analogy (Euclidean Distance)
+</summary>
+
+
+* Good approach where you have information about some previous projects but not enough to draw generalized conclusions about what might be useful drivers or typical productivity rates.
+
+### Angel:
+* Able to identify similarities & differences for large numbers of different Problems
+* Uses *EUCLIDEAN DISTANCE*
+![Ch5_img](./static/SPM_54.png)
+
+</details>
+
 
 <details>
 <summary style="font-size: 30px; font-weight: 500; cursor: pointer;"> 
