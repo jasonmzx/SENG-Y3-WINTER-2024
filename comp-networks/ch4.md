@@ -14,8 +14,9 @@ dprop: propagation delay:
 ▪ dprop = d/s
 
 ## Framing
-- Discrete set of bytes, usually with a chomputed checksum for each frame
+- Discrete set of bytes with Header, usually with a computed checksum for each frame
     - Check sum ensures frame isn't corrupt
+    - Structure specified by Link-Layer Protocol 
 
 
 #### 1. Byte Count Framing Method
