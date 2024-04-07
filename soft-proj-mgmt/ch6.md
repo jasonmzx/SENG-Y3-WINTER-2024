@@ -53,7 +53,7 @@ This summary encapsulates the foundational steps in planning and scheduling for 
 
 <details>
 <summary style="font-size: 30px; font-weight: 500; cursor: pointer;"> 
-Sequencing and Scheduling Activities
+Activity Diagrams & Critical Path (Sequencing)
 </summary>
 
 Sequencing in project management refers to the process of arranging tasks or activities in the order they need to be completed. Here are key points about sequencing:
@@ -66,6 +66,8 @@ Sequencing in project management refers to the process of arranging tasks or act
 Can use Bar Charts
 
 ![Ch4_img](./static/SPM_56.png)
+
+Time flows Left to Right in the graph ---->
 
 When the text mentions "specify Module N." (1,2,3, etc.), it likely refers to:
 
@@ -80,7 +82,6 @@ When the text mentions "specify Module N." (1,2,3, etc.), it likely refers to:
 Network Planning Models
 </summary>
 
-Time flows Left to Right in the graph ---->
 
 **CPM (Critical Path Method):**
 - **Objective:** Identifies the longest path of planned activities to the completion of a project and the shortest possible project duration.
@@ -106,7 +107,30 @@ Time flows Left to Right in the graph ---->
   5. Determine critical path and float times to analyze task flexibility.
 - **Application:** Best for research and development projects, where time estimates are uncertain.
 
+**Drawing PERT**
+- No Looping back is allowed *(Deal with Iterations, by hiding them in a single high-level activity)*
+
+- Milestones *Activites* such as the start and end of Project don't have a duration. **I start Instantly, and upon End, it's instant also** dura = 0
+
 ![Ch4_img](./static/SPM_55.png)
+
+# Links Between Activities
+
+![Ch4_img](./static/SPM_68.png)
+
+![Ch4_img](./static/SPM_69.png)
+
+**Finish to finish:** when one activity finishes the other must finish too
+- e.g. when the testing of the prototype is completed so is the documentation of any amendments 
+- e.g. documentation of the changes to the prototype starts 1 day after the testing and finishes 2 days after testing has been completed
+
+![Ch4_img](./static/SPM_71.png)
+
+**Start to finish** – in the example when the cutover to the new system
+takes place, the operation of the temporary system is no longer needed.
+Although the cutover depends of the acceptance testing to be
+completed, the implication is that the cutover might not start straight after
+acceptance testing.
 
 </details>
 
@@ -122,7 +146,79 @@ Labelling & Activity stuff
 
 ![Ch4_img](./static/SPM_58.png)
 
+If multiple nodes are connected (C.D to H) take the largest number *(Longest time)* as the start to H
+
 ![Ch4_img](./static/SPM_59.png)
 
+Backward Pass, Given finish is connected to G. and H. take G's final number as it's bigger (13 > 11) as the **Latest Finish** aka bottom right corner, and propagate back.
 
+![Ch4_img](./static/SPM_61.png)
+
+**Float**:
+- *Float (total float)*: Difference between activity Earliest Start, and Latest Start
+- *Free Float:* Measure of how much the **start or completion of an activity might be delayed, without affecting end date** of project. 
+
+Formulas:
+- Float *(aka total float)* = LF - ES - Duration
+- Free Float = **ES** of next activity - **EF** for this activity
+- Interfering Float = Total Float - Free Float
+
+![Ch4_img](./static/SPM_63.png)
+
+Diagram for Free Float, for an Idea ^^
+
+The filled in Float values below are just the **Total Floats**:
+- H. Example: **13** *bottom right* - **10** *top left* - **3** *top middle* = 0
+
+![Ch4_img](./static/SPM_62.png)
+
+- Any activity with a **float of zero is critical** in the sense that any delay in carrying out the activity will delay the completion date of the project as a whole.
+---
+
+# Critical Path
+- Defines the Duration of the Project
+- Any delay to any activity on this critical path will delay the completion of the project.
+
+-  In managing the project, we must pay particular attention to monitoring activities on the critical path
+so that the effects of any delay or resource unavailability are detected and corrected at the earliest
+opportunity.
+
+- In planning the project, it is the critical path that we must shorten if we are to reduce the overall
+duration of the project.
+
+![Ch4_img](./static/SPM_64.png)
+
+As we can see the Critical path here is from `START -> F -> G -> FIN` as F and G have Float values of zero!
+
+**If the project needs to be shortened, we must shorten Critical Path!!!** Non, critical path shortening won't have an impact on project duration. 
+
+- As we shorten Critical Path, we always need to re-check and make sure no new critical paths have emerged!
+
+-  As soon as the activities along a particular path use up their total float then that path will become a critical path and a number of hitherto non-critical activities will suddenly become critical. That's why it's sometimes good to look at *Near-Critical* paths also
+
+</details>
+
+
+<details>
+<summary style="font-size: 30px; font-weight: 500; cursor: pointer;"> 
+Activity-on-Arrow Networks & More Critical Path
+</summary>
+
+
+![Ch4_img](./static/SPM_66.png)
+
+Assume Specify Mod. C's Duration is actually **18** *(I messed up my example)*
+
+![Ch4_img](./static/SPM_67.png)
+
+For simplicitiy, I started off the Specify Modules at *0* but technically they start at 34.
+
+**Duration:** 34+59+6 = 99 days
+
+---
+
+![Ch4_img](./static/SPM_65.png)
+
+* Nodes Represent Events (Group of Activities)
+* Edges Represent by Dependencies on different events (Path kinda)
 </details>
